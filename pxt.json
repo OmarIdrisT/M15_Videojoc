@@ -7,13 +7,17 @@
         "arcade-mini-menu": "github:riknoll/arcade-mini-menu#v0.0.1",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
         "Color Fading": "github:jwunderl/pxt-color#v0.2.3",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.0.2",
+        "arcade-background-scroll": "github:microsoft/arcade-background-scroll#v0.1.2"
     },
     "files": [
         "README.md",
         "main.blocks",
         "main.ts",
-        "main.py"
+        "main.py",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
