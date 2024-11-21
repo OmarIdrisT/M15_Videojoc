@@ -7,6 +7,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (in_title) {
         in_title = false
         Menu()
+    } else if (false) {
+    	
+    } else {
+    	
     }
 })
 function SpawnText (text: string, X: number, Y: number) {
@@ -18,7 +22,13 @@ function FadeToBlack (Time2: number) {
     color.pauseUntilFadeDone()
     color.startFade(color.Black, color.originalPalette, Time2 / 2)
 }
+function SaveState () {
+    blockSettings.writeNumber("characterX", character.x)
+    blockSettings.writeNumber("characterY", character.y)
+    blockSettings.writeNumber("health", statusbar.value)
+}
 function Menu () {
+    inMenu = true
     effects.blizzard.endScreenEffect()
     sprites.destroy(textSprite)
     scene.setBackgroundImage(img`
@@ -193,12 +203,20 @@ function Menu () {
     myMenu.setStyleProperty(miniMenu.StyleKind.Default, miniMenu.StyleProperty.Foreground, 1)
     myMenu.onButtonPressed(controller.A, function (selection, selectedIndex) {
         myMenu.close()
+        inMenu = false
         if (selectedIndex == 0) {
-        	
+            if (true) {
+            	
+            } else {
+                game.showLongText("No hay datos guardados.", DialogLayout.Bottom)
+                Menu()
+            }
         } else if (selectedIndex == 1) {
             FadeToWhite(2000)
             color.pauseUntilFadeDone()
             show_intro()
+            FadeToWhite(2000)
+            color.pauseUntilFadeDone()
         } else if (selectedIndex == 2) {
         	
         } else {
@@ -458,10 +476,17 @@ function show_intro () {
     color.pauseUntilFadeDone()
     game.showLongText("4", DialogLayout.Bottom)
     game.showLongText("5", DialogLayout.Bottom)
+    character.setPosition(0, 0)
+    statusbar.value = 5
 }
 let myMenu: miniMenu.MenuSprite = null
+let statusbar: StatusBarSprite = null
+let character: Sprite = null
 let textSprite: TextSprite = null
 let in_title = false
+let inMenu = false
+let inGame = false
+inMenu = false
 in_title = true
 FadeToWhite(4000)
 effects.blizzard.startScreenEffect(5000)

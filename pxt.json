@@ -7,7 +7,12 @@
         "arcade-mini-menu": "github:riknoll/arcade-mini-menu#v0.0.1",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
         "Color Fading": "github:jwunderl/pxt-color#v0.2.3",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "color-coded-tilemap": "*",
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0",
+        "arcade-background-scroll": "github:microsoft/arcade-background-scroll#v0.1.2",
+        "arcade-tile-util": "github:microsoft/arcade-tile-util#v1.2.0",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3"
     },
     "files": [
         "README.md",
