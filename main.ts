@@ -22,11 +22,6 @@ function FadeToBlack (Time2: number) {
     color.pauseUntilFadeDone()
     color.startFade(color.Black, color.originalPalette, Time2 / 2)
 }
-function SaveState () {
-    blockSettings.writeNumber("characterX", character.x)
-    blockSettings.writeNumber("characterY", character.y)
-    blockSettings.writeNumber("health", statusbar.value)
-}
 function Menu () {
     inMenu = true
     effects.blizzard.endScreenEffect()
@@ -476,12 +471,10 @@ function show_intro () {
     color.pauseUntilFadeDone()
     game.showLongText("4", DialogLayout.Bottom)
     game.showLongText("5", DialogLayout.Bottom)
-    character.setPosition(0, 0)
-    statusbar.value = 5
+    FadeToBlack(3000)
+    color.pauseUntilFadeDone()
 }
 let myMenu: miniMenu.MenuSprite = null
-let statusbar: StatusBarSprite = null
-let character: Sprite = null
 let textSprite: TextSprite = null
 let in_title = false
 let inMenu = false
